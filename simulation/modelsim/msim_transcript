@@ -1,0 +1,54 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do TM1638_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/OneDrive/Documents/Electronics/altera/TM1638 {E:/OneDrive/Documents/Electronics/altera/TM1638/tm1638.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tm1638
+# 
+# Top level modules:
+# 	tm1638
+# vlog -vlog01compat -work work +incdir+E:/OneDrive/Documents/Electronics/altera/TM1638 {E:/OneDrive/Documents/Electronics/altera/TM1638/cnt_clock_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cnt_clock_div
+# 
+# Top level modules:
+# 	cnt_clock_div
+# vlog -vlog01compat -work work +incdir+E:/OneDrive/Documents/Electronics/altera/TM1638 {E:/OneDrive/Documents/Electronics/altera/TM1638/TM1638_shifter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module TM1638_shifter
+# 
+# Top level modules:
+# 	TM1638_shifter
+# 
+vcom -93 -work /build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model -path {$MODEL_TECH/../altera/vhdl/src/220model/220model.vhd} -O0 C:/altera/13.0sp1/modelsim_ase/altera/vhdl/src/220model/220model.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vcom-19) Failed to access library '/build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model' at "/build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model".
+# 
+# No such file or directory. (errno = ENOENT)
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -93 -work /build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model -path {$MODEL_TECH/../altera/vhdl/src/220model/220model.vhd} -O0 C:/altera/13.0sp1/modelsim_ase/altera/vhdl/src/220model/220model.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vcom-19) Failed to access library '/build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model' at "/build/swbuild/SJ/nightly/13.0sp1/232/l32/work/modelsim/libs/altera/vhdl/220model".
+# 
+# No such file or directory. (errno = ENOENT)
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vsim work.tm1638
+# vsim work.tm1638 
+# Loading work.tm1638
+# Loading work.cnt_clock_div
+# ** Error: (vsim-3033) E:/OneDrive/Documents/Electronics/altera/TM1638/cnt_clock_div.v(66): Instantiation of 'lpm_counter' failed. The design unit was not found.
+# 
+#         Region: /tm1638/CNT_CLOCK_DIV
+#         Searched libraries:
+#             E:/OneDrive/Documents/Electronics/altera/TM1638/simulation/modelsim/rtl_work
+# Loading work.TM1638_shifter
+# Error loading design

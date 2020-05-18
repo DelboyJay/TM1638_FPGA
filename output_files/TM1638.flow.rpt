@@ -1,0 +1,121 @@
+Flow report for TM1638
+Mon May 18 12:21:29 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Flow Summary                                                                ;
++---------------------------+-------------------------------------------------+
+; Flow Status               ; Successful - Mon May 18 12:21:29 2020           ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; TM1638                                          ;
+; Top-level Entity Name     ; tm1638                                          ;
+; Family                    ; MAX II                                          ;
+; Device                    ; EPM240T100C5                                    ;
+; Timing Models             ; Final                                           ;
+; Total logic elements      ; 34 / 240 ( 14 % )                               ;
+; Total pins                ; 6 / 80 ( 8 % )                                  ;
+; Total virtual pins        ; 0                                               ;
+; UFM blocks                ; 0 / 1 ( 0 % )                                   ;
++---------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 05/18/2020 12:21:23 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; TM1638              ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++---------------------------------------+--------------------------------+---------------+-------------+----------------+
+; Assignment Name                       ; Value                          ; Default Value ; Entity Name ; Section Id     ;
++---------------------------------------+--------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                 ; 18121609567073.158980088309672 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                    ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)      ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                ; 85                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                ; 0                              ; --            ; --          ; --             ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                           ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air    ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY              ; output_files                   ; --            ; --          ; --             ;
++---------------------------------------+--------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4576 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:00     ; 1.0                     ; 4764 MB             ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4515 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4522 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4495 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-PBJ8GL6  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-PBJ8GL6  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-PBJ8GL6  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-PBJ8GL6  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-PBJ8GL6  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off TM1638 -c TM1638
+quartus_fit --read_settings_files=off --write_settings_files=off TM1638 -c TM1638
+quartus_asm --read_settings_files=off --write_settings_files=off TM1638 -c TM1638
+quartus_sta TM1638 -c TM1638
+quartus_eda --read_settings_files=off --write_settings_files=off TM1638 -c TM1638
+
+
+

@@ -1,0 +1,35 @@
+`timescale 1ns/10000ns
+module shiftout(
+	input clock_in,
+	output clock_out,
+	output dataio,
+	output order	// 0=LSB FIRST, 1=MSB FIRST
+);
+	reg state = 0;
+	
+	always @(negedge clock_in) begin
+		
+	end
+	
+	
+
+endmodule
+
+module tm1638(
+	input clk,
+	input _reset,
+	output reg out
+);
+	reg [15:0] count;
+		
+	lpm_countea_syn(~_reset, clk, out)	
+
+	always @(negedge clk) begin
+		if(out==50000) begin
+			_reset <= 0;
+			out <= ~out
+		end
+	end
+	
+	
+endmodule

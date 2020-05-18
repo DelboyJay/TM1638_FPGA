@@ -1,0 +1,1561 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
+
+// DATE "05/18/2020 12:21:29"
+
+// 
+// Device: Altera EPM240T100C5 Package TQFP100
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module tm1638 (
+	clock_out,
+	clock_out_div,
+	strobe,
+	data_io,
+	reset,
+	clock_in);
+output 	clock_out;
+output 	clock_out_div;
+output 	strobe;
+output 	data_io;
+input 	reset;
+input 	clock_in;
+
+// Design Ports Information
+// clock_in	=>  Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+// reset	=>  Location: PIN_4,	 I/O Standard: 3.3V Schmitt Trigger Input,	 Current Strength: Default
+// clock_out	=>  Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// clock_out_div	=>  Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// strobe	=>  Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+// data_io	=>  Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("TM1638_v.sdo");
+// synopsys translate_on
+
+wire \clock_in~combout ;
+wire \reset~combout ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3 ;
+wire \Equal0~5_combout ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3 ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUT ;
+wire \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUTCOUT1_3 ;
+wire \Equal0~6_combout ;
+wire \Equal0~7_combout ;
+wire \Equal0~0_combout ;
+wire \Equal0~1_combout ;
+wire \Equal0~3_combout ;
+wire \Equal0~2_combout ;
+wire \Equal0~4_combout ;
+wire \clock_out_div~reg0_regout ;
+wire [24:0] \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q ;
+
+
+// Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \clock_in~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\clock_in~combout ),
+	.padio(clock_in));
+// synopsys translate_off
+defparam \clock_in~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_4,	 I/O Standard: 3.3V Schmitt Trigger Input,	 Current Strength: Default
+maxii_io \reset~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\reset~combout ),
+	.padio(reset));
+// synopsys translate_off
+defparam \reset~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N3
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0] = DFFEAS((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]), GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .lut_mask = "55aa";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .sum_lutc_input = "datac";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N4
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1] $ ((((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUT )))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella0~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1]),
+	.cout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N5
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2] $ ((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT )))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ))))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ))))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .lut_mask = "a50a";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N6
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella2~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N7
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT )))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella3~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N8
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella4~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N9
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella1~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella5~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6]),
+	.cout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N0
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7] $ ((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7])))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7])))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .lut_mask = "3c3f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N1
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT )))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella7~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N2
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9] $ (((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9])))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3 ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9])))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella8~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .lut_mask = "3c3f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N3
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10] $ ((((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT ))))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3 ))))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella9~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .lut_mask = "a50a";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N4
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella6~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella10~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11]),
+	.cout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N5
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12] $ ((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT )))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ))))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ))))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .lut_mask = "a50a";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N6
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella12~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N7
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT )))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella13~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N8
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella14~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X5_Y2_N9
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella11~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella15~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16]),
+	.cout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N0
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17] $ ((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17])))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17])))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .lut_mask = "3c3f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N1
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT )))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3  = CARRY(((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3 )))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella17~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .lut_mask = "c30c";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N2
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19] $ (((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19])))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3 ) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19])))
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella18~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .lut_mask = "3c3f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X3_Y2_N1
+maxii_lcell \Equal0~5 (
+// Equation(s):
+// \Equal0~5_combout  = (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19] & 
+// !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18])))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [16]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [17]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [19]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [18]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~5_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~5 .lut_mask = "0001";
+defparam \Equal0~5 .operation_mode = "normal";
+defparam \Equal0~5 .output_mode = "comb_only";
+defparam \Equal0~5 .register_cascade_mode = "off";
+defparam \Equal0~5 .sum_lutc_input = "datac";
+defparam \Equal0~5 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N3
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20] $ ((((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT ))))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3 ))))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella19~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .lut_mask = "a50a";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N4
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella16~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella20~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21]),
+	.cout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N5
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22] $ ((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT )))), GLOBAL(\clock_in~combout ), 
+// !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ))))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3  = CARRY((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22] & ((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ))))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .lut_mask = "a50a";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N6
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23] = DFFEAS(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23] $ (((((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3 ))))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUT  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23]))
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUTCOUT1_3  = CARRY(((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3 )) # (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23]))
+
+	.clk(\clock_in~combout ),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23]),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella22~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23]),
+	.cout(),
+	.cout0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUT ),
+	.cout1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUTCOUT1_3 ));
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .lut_mask = "5a5f";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .operation_mode = "arithmetic";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N7
+maxii_lcell \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 (
+// Equation(s):
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24] = DFFEAS((\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24] $ ((!(!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT  & 
+// \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUT ) # (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT  & \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUTCOUT1_3 )))), 
+// GLOBAL(\clock_in~combout ), !GLOBAL(\reset~combout ), , , , , , )
+
+	.clk(\clock_in~combout ),
+	.dataa(vcc),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24]),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(\reset~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella21~COUT ),
+	.cin0(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUT ),
+	.cin1(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella23~COUTCOUT1_3 ),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24]),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .cin0_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .cin1_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .cin_used = "true";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .lut_mask = "c3c3";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .operation_mode = "normal";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .output_mode = "reg_only";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .register_cascade_mode = "off";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .sum_lutc_input = "cin";
+defparam \CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|counter_cella24 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N8
+maxii_lcell \Equal0~6 (
+// Equation(s):
+// \Equal0~6_combout  = (((!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21] & !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20])))
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [21]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [20]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~6_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~6 .lut_mask = "000f";
+defparam \Equal0~6 .operation_mode = "normal";
+defparam \Equal0~6 .output_mode = "comb_only";
+defparam \Equal0~6 .register_cascade_mode = "off";
+defparam \Equal0~6 .sum_lutc_input = "datac";
+defparam \Equal0~6 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X6_Y2_N9
+maxii_lcell \Equal0~7 (
+// Equation(s):
+// \Equal0~7_combout  = (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22] & \Equal0~6_combout )))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [23]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [24]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [22]),
+	.datad(\Equal0~6_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~7_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~7 .lut_mask = "0100";
+defparam \Equal0~7 .operation_mode = "normal";
+defparam \Equal0~7 .output_mode = "comb_only";
+defparam \Equal0~7 .register_cascade_mode = "off";
+defparam \Equal0~7 .sum_lutc_input = "datac";
+defparam \Equal0~7 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X3_Y2_N6
+maxii_lcell \Equal0~0 (
+// Equation(s):
+// \Equal0~0_combout  = (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2] & (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0] & 
+// !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1])))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [3]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [2]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [0]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [1]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~0_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~0 .lut_mask = "0010";
+defparam \Equal0~0 .operation_mode = "normal";
+defparam \Equal0~0 .output_mode = "comb_only";
+defparam \Equal0~0 .register_cascade_mode = "off";
+defparam \Equal0~0 .sum_lutc_input = "datac";
+defparam \Equal0~0 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N2
+maxii_lcell \Equal0~1 (
+// Equation(s):
+// \Equal0~1_combout  = (\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7] & 
+// !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6])))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [5]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [4]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [7]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [6]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~1_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~1 .lut_mask = "0002";
+defparam \Equal0~1 .operation_mode = "normal";
+defparam \Equal0~1 .output_mode = "comb_only";
+defparam \Equal0~1 .register_cascade_mode = "off";
+defparam \Equal0~1 .sum_lutc_input = "datac";
+defparam \Equal0~1 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N0
+maxii_lcell \Equal0~3 (
+// Equation(s):
+// \Equal0~3_combout  = (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13] & 
+// !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12])))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [14]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [15]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [13]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [12]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~3_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~3 .lut_mask = "0001";
+defparam \Equal0~3 .operation_mode = "normal";
+defparam \Equal0~3 .output_mode = "comb_only";
+defparam \Equal0~3 .register_cascade_mode = "off";
+defparam \Equal0~3 .sum_lutc_input = "datac";
+defparam \Equal0~3 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y2_N1
+maxii_lcell \Equal0~2 (
+// Equation(s):
+// \Equal0~2_combout  = (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11] & (!\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9] & 
+// !\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8])))
+
+	.clk(gnd),
+	.dataa(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [10]),
+	.datab(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [11]),
+	.datac(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [9]),
+	.datad(\CNT_CLOCK_DIV|LPM_COUNTER_component|auto_generated|safe_q [8]),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~2_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~2 .lut_mask = "0001";
+defparam \Equal0~2 .operation_mode = "normal";
+defparam \Equal0~2 .output_mode = "comb_only";
+defparam \Equal0~2 .register_cascade_mode = "off";
+defparam \Equal0~2 .sum_lutc_input = "datac";
+defparam \Equal0~2 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X3_Y2_N3
+maxii_lcell \Equal0~4 (
+// Equation(s):
+// \Equal0~4_combout  = (\Equal0~0_combout  & (\Equal0~1_combout  & (\Equal0~3_combout  & \Equal0~2_combout )))
+
+	.clk(gnd),
+	.dataa(\Equal0~0_combout ),
+	.datab(\Equal0~1_combout ),
+	.datac(\Equal0~3_combout ),
+	.datad(\Equal0~2_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Equal0~4_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \Equal0~4 .lut_mask = "8000";
+defparam \Equal0~4 .operation_mode = "normal";
+defparam \Equal0~4 .output_mode = "comb_only";
+defparam \Equal0~4 .register_cascade_mode = "off";
+defparam \Equal0~4 .sum_lutc_input = "datac";
+defparam \Equal0~4 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X3_Y2_N4
+maxii_lcell \clock_out_div~reg0 (
+// Equation(s):
+// \clock_out_div~reg0_regout  = DFFEAS(\clock_out_div~reg0_regout  $ (((\Equal0~5_combout  & (\Equal0~7_combout  & \Equal0~4_combout )))), GLOBAL(\clock_in~combout ), VCC, , , , , , )
+
+	.clk(\clock_in~combout ),
+	.dataa(\clock_out_div~reg0_regout ),
+	.datab(\Equal0~5_combout ),
+	.datac(\Equal0~7_combout ),
+	.datad(\Equal0~4_combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\clock_out_div~reg0_regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \clock_out_div~reg0 .lut_mask = "6aaa";
+defparam \clock_out_div~reg0 .operation_mode = "normal";
+defparam \clock_out_div~reg0 .output_mode = "reg_only";
+defparam \clock_out_div~reg0 .register_cascade_mode = "off";
+defparam \clock_out_div~reg0 .sum_lutc_input = "datac";
+defparam \clock_out_div~reg0 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \clock_out~I (
+	.datain(\clock_in~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(clock_out));
+// synopsys translate_off
+defparam \clock_out~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \clock_out_div~I (
+	.datain(\clock_out_div~reg0_regout ),
+	.oe(vcc),
+	.combout(),
+	.padio(clock_out_div));
+// synopsys translate_off
+defparam \clock_out_div~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \strobe~I (
+	.datain(gnd),
+	.oe(vcc),
+	.combout(),
+	.padio(strobe));
+// synopsys translate_off
+defparam \strobe~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \data_io~I (
+	.datain(gnd),
+	.oe(vcc),
+	.combout(),
+	.padio(data_io));
+// synopsys translate_off
+defparam \data_io~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule
